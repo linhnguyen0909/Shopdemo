@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
+use Flugg\Responder\Responder;
 use Illuminate\Http\Request;
 use Webpatser\Uuid\Uuid;
+use function GuzzleHttp\Promise\all;
 
 class PostController extends Controller
 {
@@ -13,13 +16,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Responder $responder)
     {
         $post = auth()->user()->posts();
-        return response()->json([
-            'Success' => true,
-            'data' => $post
-        ]);
+        return $responder->success($post->toArray());
     }
 
     /**
@@ -28,24 +28,12 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request ,Responder $responder)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required'
-        ]);
-        $post = new Post($request->all());
-        $post = Uuid::generate();
-        if (auth()->user()->posts()->save($post))
-            return response()->json([
-                'success' => true,
-                'data' => $post->toArray()
-            ]);
-        else
-            return response()->json([
-                'success' => false,
-                'message' => 'Post not added'
-            ], 500);
+        $request->validated();
+        $post = new Post();
+        $post->fill($request->all())->save();
+        return $responder->success($post->toArray());
     }
 
     /**
@@ -54,19 +42,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post,Responder $responder)
     {
-        $post = auth()->user()->posts()->find($id);
-        if (!$post) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Post not found'
-            ], 400);
-        }
-        return response()->json([
-            'success' => true,
-            'message' => $post->toArray()
-        ], 400);
+        return $responder->success($post->toArray());
     }
 
     /**
@@ -76,28 +54,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post,Responder $responder)
     {
-        $post = auth()->user()->posts()->find($id);
-
-        if (!$post) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Post not found'
-            ], 400);
-        }
-
         $updated = $post->fill($request->all())->save();
-
-        if ($updated)
-            return response()->json([
-                'success' => true
-            ]);
-        else
-            return response()->json([
-                'success' => false,
-                'message' => 'Post can not be updated'
-            ], 500);
+        return $responder->success();
     }
 
     /**
@@ -106,27 +66,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post,Responder $responder)
     {
-        $post = auth()->user()->posts()->find($id);
-
-        if (!$post) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Post not found'
-            ], 400);
-        }
-
-        if ($post->delete()) {
-            return response()->json([
-                'success' => true
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Post can not be deleted'
-            ], 500);
-        }
+        $post->delete();
+        return $responder->success();
     }
 
 }

@@ -16,7 +16,7 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
-    public function login(Request $request)
+    public function login(Request $request, LoginAuthRequest $loginRequest)
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -26,7 +26,6 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-
         if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -34,22 +33,14 @@ class AuthController extends Controller
         return $this->creaNewToken($token);
     }
 
-    public function register(Request $request)
+    public function register(Request $request, RegisterAuthRequest $registerRequesr)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:2,100',
-            'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|string|min:6',
-        ]);
+        $validator = Validator::make($request->all(), [$registerRequesr]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
         }
         $user = new User($request->all());
-//        $user = User::create(array_merge(
-//            $validator->validated(),
-//            ['password' => bcrypt($request->password)]
-//        ));
         $user->id = Uuid::generate();
         $user->save();
         return response()->json([
@@ -79,7 +70,6 @@ class AuthController extends Controller
         return response()->json([
             'token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
         ]);
     }

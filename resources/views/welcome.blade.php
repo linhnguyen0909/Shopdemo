@@ -79,6 +79,10 @@
                 </div>
             @endif
 
+{{--                <form action="#" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    @method('PUT')--}}
+{{--                </form>--}}
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
