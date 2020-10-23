@@ -28,3 +28,7 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::get('user-profile', 'AuthController@userProfile');
 });
+
+Route::middleware('auth:api')->group(function () {
+    Route::resource('posts', 'PostController');
+});

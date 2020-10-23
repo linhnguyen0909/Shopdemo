@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Post;
+use App\Traits\HasUuid;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,6 +14,7 @@ use Tymon\JWTAuth\JWT;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    use HasUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -43,14 +46,16 @@ class User extends Authenticatable implements JWTSubject
     /**
      * @return mixed
      */
-    public function getJWTIdentifier() {
+    public function getJWTIdentifier()
+    {
         return $this->getKey();
     }
 
     /**
      * @return array
      */
-    public function getJWTCustomClaims() {
+    public function getJWTCustomClaims()
+    {
         return [];
     }
 
@@ -60,5 +65,10 @@ class User extends Authenticatable implements JWTSubject
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }
