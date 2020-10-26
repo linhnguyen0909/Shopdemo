@@ -12,7 +12,7 @@ class FrontController extends Controller
     public function addFeedback(Request $request)
     {
         $input = $request->all();
-        Mail::send('mailfb', array('name'=>$input["name"],'email'=>$input["email"], 'content'=>$input['comment']), function($message){
+        Mail::send('mailfb', array('name'=>$input["name"],'emails'=>$input["emails"], 'content'=>$input['comment']), function($message){
             $message->to(' ĐIỀN EMAIL CỦA BẠN MUỐN NHẬN MAIL VÀO ĐÂY', 'Visitor')->subject('Visitor Feedback!');
         });
         Session::flash('flash_message', 'Send message successfully!');

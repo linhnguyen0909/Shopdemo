@@ -20,23 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7939baf5-e709-4a46-8c23-5d0fc96993d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/AuthRelationship.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demoproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demoproject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoginAuthRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoginAuthRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,17 +177,19 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Gumi/gumi-cms-boilerplate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simple" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\shopdemo\app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\shopdemo\storage\app" />
       <recent name="D:\laragon\www\shopdemo\app" />
       <recent name="D:\laragon\www\shopdemo\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\shopdemo\resources\views" />
+      <recent name="D:\laragon\www\shopdemo\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -210,7 +213,8 @@
       <workItem from="1603329504267" duration="21326000" />
       <workItem from="1603358564379" duration="6032000" />
       <workItem from="1603415173299" duration="421000" />
-      <workItem from="1603415791803" duration="4815000" />
+      <workItem from="1603415791803" duration="25743000" />
+      <workItem from="1603677854624" duration="7594000" />
     </task>
     <servers />
   </component>
@@ -238,10 +242,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603353534953" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603360297260">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603678354596">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603360297260" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603678354596" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603415439264">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -262,6 +266,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603353493498" />
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1603679857051">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603679857051" />
     <state x="667" y="273" width="585" height="534" key="find.popup" timestamp="1603272590978">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

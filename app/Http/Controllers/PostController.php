@@ -18,8 +18,7 @@ class PostController extends Controller
      */
     public function index(Responder $responder)
     {
-        $post = auth()->user()->posts();
-        return $responder->success($post->toArray());
+        return $responder->success(Post::all());
     }
 
     /**
@@ -28,7 +27,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreatePostRequest $request ,Responder $responder)
+    public function store(CreatePostRequest $request,Responder $responder)
     {
         $request->validated();
         $post = new Post();
