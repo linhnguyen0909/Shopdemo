@@ -20,23 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7939baf5-e709-4a46-8c23-5d0fc96993d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/AuthRelationship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demoproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demoproject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/success.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/MyEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/MyEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +201,7 @@
       <workItem from="1603358564379" duration="6032000" />
       <workItem from="1603415173299" duration="421000" />
       <workItem from="1603415791803" duration="4815000" />
+      <workItem from="1603688740183" duration="8654000" />
     </task>
     <servers />
   </component>
@@ -238,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603353534953" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603360297260">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603699765294">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603360297260" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603699765294" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603415439264">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

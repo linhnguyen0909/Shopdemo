@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/form',function (){
    return view('form');
 });
-Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
-Route::get("send-emails", "EmailController@sendEmailToUser");
+Route::post("send-emails", "EmailController@sendEmail")->name('mail.send');
+Route::get('send',function (){
+    return view('emails.email');
+});
