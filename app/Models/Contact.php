@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasDate;
 use App\Traits\HasUuid;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -14,7 +15,7 @@ class Contact extends Model
 
     protected $table = 'contacts';
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'city', 'country', 'job_title', 'phone'
+        'first_name', 'last_name', 'email','birthday', 'city', 'country', 'job_title', 'phone'
     ];
 
     protected $appends = ['age', 'fullname'];
@@ -37,4 +38,8 @@ class Contact extends Model
     }
 
     protected $dateFormat = 'U';
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }
