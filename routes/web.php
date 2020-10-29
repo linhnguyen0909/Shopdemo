@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/form',function (){
+   return view('form');
+});
+Route::post("send-emails", "EmailController@sendEmail")->name('mail.send');
+Route::get('send',function (){
+    return view('emails.email');
 });
