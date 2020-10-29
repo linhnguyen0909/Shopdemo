@@ -2,8 +2,12 @@
 
 namespace App;
 
+use App\Builders\UserBuilder;
+use App\Models\Book;
+use App\Models\Contact;
 use App\Models\Post;
 use App\Traits\HasUuid;
+use App\Traits\OverridesBuilder;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,7 +19,9 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
     use HasUuid;
+    use OverridesBuilder;
 
+    protected $table ='users';
     /**
      * The attributes that are mass assignable.
      *
@@ -43,6 +49,7 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+
     /**
      * @return mixed
      */
@@ -67,8 +74,21 @@ class User extends Authenticatable implements JWTSubject
         $this->attributes['password'] = bcrypt($value);
     }
 
-    public function posts()
+    public function provideCustomBuilder()
     {
-        return $this->hasMany(Post::class);
+        return UserBuilder::class;
+    }
+
+    private static $whiteListFilter = ['*'];
+
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
     }
 }

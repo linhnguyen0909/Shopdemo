@@ -20,23 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7939baf5-e709-4a46-8c23-5d0fc96993d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/AuthRelationship.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bebe1df6-8d76-41e9-a968-795399b7e525.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/demoproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demoproject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterAuthRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Builders/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Builders/Builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/EloquestFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/EloquestFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/UserFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/UserFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="cil" id="634abcd7-5014-4b89-b83b-b800ad493b81" name="cil" />
+    </servers>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
@@ -164,6 +169,9 @@
       <path value="$PROJECT_DIR$/vendor/webpatser/laravel-uuid" />
       <path value="$PROJECT_DIR$/vendor/flugger/laravel-responder" />
       <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/mehdi-fathi/eloquent-filter" />
+      <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jAONl9v5CTDzysuLhKcCf8Iogk" />
@@ -176,24 +184,32 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Gumi/gumi-cms-boilerplate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shop" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\shopdemo\app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\laragon\www\shopdemo\app" />
       <recent name="D:\laragon\www\shopdemo\app\Models" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\shopdemo\app\Traits" />
+      <recent name="D:\laragon\www\shopdemo\app" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Remote Debug.laravel-7.4.11">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="laravel-7.4.11" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="cil" session_id="shopdemo.test">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Remote Debug.laravel-7.4.11" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,6 +227,8 @@
       <workItem from="1603358564379" duration="6032000" />
       <workItem from="1603415173299" duration="421000" />
       <workItem from="1603415791803" duration="4815000" />
+      <workItem from="1603904078633" duration="1928000" />
+      <workItem from="1603933400143" duration="32432000" />
     </task>
     <servers />
   </component>
@@ -230,41 +248,89 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603252798876">
+    <state x="678" y="248" key="#Servers" timestamp="1603934734887">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603252798876" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603353534953">
+    <state x="678" y="248" key="#Servers/0.0.1920.1080@0.0.1920.1080" timestamp="1603934734887" />
+    <state x="552" y="198" width="1092" height="814" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603964161455">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603353534953" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603360297260">
+    <state x="552" y="198" width="1092" height="814" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603964161455" />
+    <state x="765" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1603943222343">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603360297260" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603415439264">
+    <state x="765" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603943222343" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603965628375">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603415439264" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1603415439263">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603965628375" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1603955028519">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603415439263" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1603415439263">
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603955028519" />
+    <state width="1877" height="257" key="GridCell.Tab.0.bottom" timestamp="1603969352194">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603415439263" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1603415439263">
+    <state width="1877" height="257" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.0.center" timestamp="1603969352193">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603415439263" />
-    <state x="769" y="263" key="NewPhpClassDialog" timestamp="1603353493498">
+    <state width="1877" height="257" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352193" />
+    <state width="1877" height="257" key="GridCell.Tab.0.left" timestamp="1603969352193">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="769" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603353493498" />
-    <state x="667" y="273" width="585" height="534" key="find.popup" timestamp="1603272590978">
+    <state width="1877" height="257" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352193" />
+    <state width="1877" height="257" key="GridCell.Tab.0.right" timestamp="1603969352193">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="667" y="273" width="585" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1603272590978" />
+    <state width="1877" height="257" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352193" />
+    <state width="1877" height="257" key="GridCell.Tab.1.bottom" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.1.center" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.1.left" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.1.right" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.2.bottom" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.2.center" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.2.left" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state width="1877" height="257" key="GridCell.Tab.2.right" timestamp="1603969352194">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="257" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603969352194" />
+    <state x="769" y="263" key="NewPhpClassDialog" timestamp="1603934355824">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="769" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603934355824" />
+    <state x="667" y="273" width="585" height="534" key="find.popup" timestamp="1603934160301">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="667" y="273" width="585" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1603934160301" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1603966234715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1603966234715" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1603950466705">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1603950466705" />
   </component>
 </project>
