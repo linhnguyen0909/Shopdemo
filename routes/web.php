@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/form',function (){
-   return view('form');
+
+Route::get('/send',function (){
+   return view('emails.email');
 });
-Route::post("send-emails", "EmailController@sendEmail")->name('mail.send');
-Route::get('send',function (){
-    return view('emails.email');
-});
+Route::post('/send-emails', "EmailController@sendEmail")->name('mail.send');
+
+

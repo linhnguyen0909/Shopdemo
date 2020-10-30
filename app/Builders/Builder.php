@@ -31,5 +31,5 @@ class Builder extends BaseBuilder implements EloquestFilter
         $this->where($column, 'like', '%'.$value.'%');
         return $this;
     }
->>>>>>> feature/#06_like_search_user
+
 }

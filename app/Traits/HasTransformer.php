@@ -4,11 +4,6 @@
 namespace App\Traits;
 
 
-<<<<<<< HEAD
-trait HasTransformer
-{
-
-=======
 use Flugg\Responder\Http\MakesResponses;
 use Flugg\Responder\Http\Responses\SuccessResponseBuilder;
 use Flugg\Responder\Serializers\SuccessSerializer;
@@ -93,5 +88,4 @@ trait HasTransformer
             ->data($errors)
             ->respond(JsonResponse::HTTP_BAD_REQUEST);
     }
->>>>>>> feature/#06_like_search_user
 }

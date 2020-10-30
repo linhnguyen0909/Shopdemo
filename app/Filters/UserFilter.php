@@ -4,14 +4,14 @@
 namespace App\Filters;
 
 
-<<<<<<< HEAD
 class UserFilter
 {
 
-=======
-use App\Models\Contact;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
+
+
+    use App\Models\Contact;
+    use Carbon\Carbon;
+    use Illuminate\Http\Request;
 
 
 class UserFilter extends Filter
@@ -24,6 +24,8 @@ class UserFilter extends Filter
     {
         return $this->query->whereLike('name', $name);
     }
+
+
 
     public function titleBook($title){
         return $this->query->whereHas('books',function ($query)use ($title){
@@ -42,5 +44,4 @@ class UserFilter extends Filter
 //            $query->whereYear($data, '>', $age);
 //        });
 //    }
->>>>>>> feature/#06_like_search_user
 }

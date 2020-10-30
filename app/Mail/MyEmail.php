@@ -31,7 +31,7 @@ class MyEmail extends Mailable
 
         return $this
             ->from('nguyenhoailinh9099@gmail.com')
-            ->subject('Test send mail')->view('emails.success')
+            ->subject('Linh Đẹp Trai ')->view('emails.success')
             ->with('data',$this->data);
     }
 }
