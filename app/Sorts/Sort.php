@@ -3,27 +3,34 @@
 
 namespace App\Sorts;
 
-
 use App\Builders\Builder;
 use Illuminate\Http\Request;
 
-Abstract class Sort
+abstract class Sort
 {
+    /**
+     * The request instance.
+     *
+     * @var Request
+     */
     private $request;
 
+    /**
+     * The builder instance.
+     *
+     * @var Builder
+     */
     protected $query;
 
-    /**
-     * Sort constructor.
-     * @param  Request  $request
-     */
     public function __construct(Request $request)
     {
-        return $this->request=$request;
+        $this->request = $request;
     }
 
     /**
-     * @param  Builder  $query
+     * Apply the filters to the builder.
+     *
+     * @param Builder $query
      * @return Builder
      */
     public function apply(Builder $query)
@@ -43,10 +50,12 @@ Abstract class Sort
     }
 
     /**
-     * @return mixed
+     * Get request filters data.
+     *
+     * @return array
      */
     public function sortBys()
     {
-        return $this->request->get('sortBy', []);
+        return $this->request->get('sortBy',[]);
     }
 }
