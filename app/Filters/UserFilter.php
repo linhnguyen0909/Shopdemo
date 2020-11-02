@@ -3,12 +3,6 @@
 
 namespace App\Filters;
 
-
-class UserFilter
-{
-
-
-
     use App\Models\Contact;
     use Carbon\Carbon;
     use Illuminate\Http\Request;

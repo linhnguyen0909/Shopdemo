@@ -2,13 +2,6 @@
 
 
 namespace App\Filters;
-
-
-<<<<<<< HEAD
-class Filter
-{
-
-=======
 use App\Builders\Builder;
 use Illuminate\Http\Request;
 
@@ -48,5 +41,4 @@ abstract class Filter
     public function filters(){
         return $this->request->get('filters',[]);
     }
->>>>>>> feature/#06_like_search_user
 }

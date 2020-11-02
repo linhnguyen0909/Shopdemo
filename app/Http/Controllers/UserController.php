@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Filters\UserFilter;
+use App\Sorts\UserSort;
 use App\Transformers\UserTransformer;
 use App\User;
-use eloquentFilter\QueryFilter\ModelFilters\ModelFilters;
+use App\Builders\Builder;
 use Illuminate\Http\Request;
 
 class UserController extends ApiController
@@ -21,9 +22,9 @@ class UserController extends ApiController
      * @param  UserFilter  $userFilter
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, UserFilter $userFilter)
+    public function index(Request $request, UserFilter $userFilter, UserSort $userSort)
     {
-        return $this->httpOK(User::query()->filter($userFilter), UserTransformer::class)->only('email','name');
+        return $this->httpOK(User::query()->filter($userFilter)->sortBy($userSort)->paginate(4),UserTransformer::class);
     }
 
     /**
@@ -34,6 +35,7 @@ class UserController extends ApiController
      */
     public function store(Request $request)
     {
+
     }
 
     /**
