@@ -29,8 +29,9 @@ Route::group([
     Route::get('user-profile', 'AuthController@userProfile');
 });
 
-Route::middleware('auth:api')->group(function () {
-    Route::resource('posts', 'PostController');
+Route::middleware('auth:admin,user')->group(function () {
+    Route::apiresource('posts', 'PostController');
+    Route::apiResource('users','UserController');
 });
 Route::apiResource('searchs','BookController');
-Route::apiResource('users','UserController');
+

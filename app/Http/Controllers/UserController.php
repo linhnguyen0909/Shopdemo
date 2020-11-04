@@ -8,13 +8,14 @@ use App\Transformers\UserTransformer;
 use App\User;
 use App\Builders\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends ApiController
 {
-//        public function __construct()
-//        {
-//            $this->authorizeResource(User::class);
-//        }
+        public function __construct()
+        {
+            $this->authorizeResource(User::class);
+        }
     /**
      * Display a listing of the resource.
      *
@@ -67,9 +68,15 @@ class UserController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,User $user)
     {
-        //
+        if (Gate::allows('isAmin')){
+            $user->delete();
+            return $this->httpNoContent();
+        }
+        else {
+            return 'You are not Admin';
+        }
     }
 
 

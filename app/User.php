@@ -3,22 +3,21 @@
 namespace App;
 
 use App\Builders\UserBuilder;
+use App\Interfaces\AuthInterface;
 use App\Models\Book;
 use App\Models\Contact;
-use App\Models\Post;
 use App\Traits\HasUuid;
 use App\Traits\OverridesBuilder;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-use Tymon\JWTAuth\JWT;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject, AuthInterface
 {
     use Notifiable;
     use HasUuid;
+    use HasRoles;
     use OverridesBuilder;
 
     protected $table ='users';
@@ -90,5 +89,10 @@ class User extends Authenticatable implements JWTSubject
     public function contacts()
     {
         return $this->hasMany(Contact::class);
+    }
+
+    public function isAdmin(): bool
+    {
+        return false;
     }
 }

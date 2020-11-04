@@ -6,6 +6,7 @@ use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
 use Flugg\Responder\Responder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Webpatser\Uuid\Uuid;
 use function GuzzleHttp\Promise\all;
 
@@ -30,10 +31,19 @@ class PostController extends Controller
      */
     public function store(CreatePostRequest $request ,Responder $responder)
     {
-        $request->validated();
-        $post = new Post();
-        $post->fill($request->all())->save();
-        return $responder->success($post->toArray());
+//        $request->validated();
+//        $post = new Post();
+//        $post->fill($request->all())->save();
+//        return $responder->success($post->toArray());
+        $user = Auth::user();
+
+        if ($user->can('create', Post::class)) {
+            echo 'Current logged in user is allowed to create new posts.';
+        } else {
+            echo 'Not Authorized';
+        }
+
+        exit;
     }
 
     /**

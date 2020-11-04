@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\User;
 use eloquentFilter\QueryFilter\ModelFilters\ModelFilters;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -20,14 +21,13 @@ class BookController extends Controller
                     $query->where('title', 'like', $request->title);
                 });
             })
-            ->get(['id','name','email'])->sortBy('email')
-//            ->load([
-//                'books' => function ($q) {
-//                    $q->get(['id','title']);
-//                },
-//            ])
-        ;
+            ->get(['name','email'])->sortBy('email')
+            ->load([
+                'books' => function ($q) {
 
+                },
+            ])
+        ;
         return $user;
 //    public function index(ModelFilters $modelFilters)
 //    {
