@@ -7,28 +7,20 @@ use App\User;
 use eloquentFilter\QueryFilter\ModelFilters\ModelFilters;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
     public function index(Request $request)
     {
-        $user = User::query()->where('name', 'like', '%'.$request->name.'%')
+        return User::query()->where('name', 'like', '%'.$request->name.'%')
             ->when($request->title, function ($query) use ($request) {
                 $query->whereHas('books', function ($query) use ($request) {
                     $query->where('title', 'like', $request->title);
                 });
             })
-            ->get(['id','name','email'])->sortBy('email')
-//            ->load([
-//                'books' => function ($q) {
-//                    $q->get(['id','title']);
-//                },
-//            ])
-        ;
+->get();
 
-        return $user;
 //    public function index(ModelFilters $modelFilters)
 //    {
 //        if (!empty($modelFilters->filters())) {
