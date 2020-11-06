@@ -21,13 +21,12 @@ class BookController extends Controller
                     $query->where('title', 'like', $request->title);
                 });
             })
-            ->get(['name','email'])->sortBy('email')
+            ->get(['id','name','email'])
             ->load([
                 'books' => function ($q) {
-
+                    $q->select(['user_id','title']);
                 },
-            ])
-        ;
+            ]);
         return $user;
 //    public function index(ModelFilters $modelFilters)
 //    {
