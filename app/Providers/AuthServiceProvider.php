@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Admin;
 use App\Models\Post;
 use App\Policies\PostPolicy;
 use App\Policies\UserPolicy;
 use App\User;
-use http\Env\Request;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use phpDocumentor\Reflection\DocBlock\Tags\Return_;
@@ -22,6 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Model' => 'App\Policies\ModelPolicy',
         User::class => UserPolicy::class,
         Post::class=> PostPolicy::class,
+
     ];
 
     /**
@@ -33,14 +34,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('isAdmin', function ($user) {
-            return $user->role == 'admin';
-        });
-        Gate::define('isManager', function ($user) {
-            return $user->role == 'manager';
-        });
-        Gate::define('isUser', function ($user) {
-            return $user->role == 'user';
-        });
+//        Gate::define('isAdmin', function ($user) {
+//            return $user->role == 'admin';
+//        });
+//        Gate::define('isManager', function ($user) {
+//            return $user->role == 'manager';
+//        });
+//        Gate::define('isUser', function ($user) {
+//            return $user->role == 'user';
+//        });
     }
 }

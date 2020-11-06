@@ -6,6 +6,7 @@ use App\Builders\UserBuilder;
 use App\Interfaces\AuthInterface;
 use App\Models\Book;
 use App\Models\Contact;
+use App\Models\Post;
 use App\Traits\HasUuid;
 use App\Traits\OverridesBuilder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -20,7 +21,8 @@ class User extends Authenticatable implements JWTSubject, AuthInterface
     use HasRoles;
     use OverridesBuilder;
 
-    protected $table ='users';
+    protected $guard = 'user';
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -94,5 +96,10 @@ class User extends Authenticatable implements JWTSubject, AuthInterface
     public function isAdmin(): bool
     {
         return false;
+    }
+
+    public function Posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

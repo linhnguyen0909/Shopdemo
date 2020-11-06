@@ -29,9 +29,11 @@ Route::group([
     Route::get('user-profile', 'AuthController@userProfile');
 });
 
-Route::middleware('auth:admin,user')->group(function () {
+Route::middleware('auth:user')->group(function () {
     Route::apiresource('posts', 'PostController');
-    Route::apiResource('users','UserController');
+
 });
 Route::apiResource('searchs','BookController');
+Route::apiResource('users','UserController');
+Route::apiResource('users.roles','UserRoleController')->only('store');
 

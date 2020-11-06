@@ -12,3 +12,4 @@
     {!! Form::submit('Send', ['class' => 'button']) !!}
 </div>
 {!! Form::close() !!}
+
