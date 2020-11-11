@@ -2,14 +2,11 @@
 
 namespace App\Providers;
 
-use App\Models\Admin;
 use App\Models\Post;
 use App\Policies\PostPolicy;
 use App\Policies\UserPolicy;
 use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class AuthServiceProvider extends ServiceProvider
 {

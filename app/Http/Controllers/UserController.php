@@ -7,17 +7,16 @@ use App\Http\Requests\CreateUserRequest;
 use App\Sorts\UserSort;
 use App\Transformers\UserTransformer;
 use App\User;
-use App\Builders\Builder;
 use Flugg\Responder\Responder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Notifications\Notifiable;use Illuminate\Support\Facades\Gate;
 
 class UserController extends ApiController
 {
+    use Notifiable;
     public function __construct()
     {
 //        $this->middleware('auth:user');
-
 //        $this->authorizeResource(User::class);
     }
 
@@ -45,7 +44,7 @@ class UserController extends ApiController
         $request->validated();
         $user = new User();
         $user->fill($request->all());
-        dd($request->toArray());
+//        $user->assignRole($request->input('roles'));
         $user->save();
         return $responder->success($user->toArray());
     }

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/send',function (){
    return view('emails.email');
 });
@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users','UserController');
     Route::resource('products','ProductController');
 });
-
+//Route::get('user/activation/{token}', 'Auth\RegisterController@activateUser')->name('user.activate');
 
 //Auth::routes();
 //

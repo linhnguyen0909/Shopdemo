@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginAuthRequest;
-use App\Http\Requests\RegisterAuthRequest;
+use App\Http\Requests\UserRegisterRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Webpatser\Uuid\Uuid;
 use Illuminate\Support\Facades\Validator;
 
-class AuthController extends Controller
+class AuthController extends ApiController
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:admin,user', ['except' => ['login', 'register']]);
     }
 
     public function login(Request $request, LoginAuthRequest $loginRequest)
@@ -33,15 +33,11 @@ class AuthController extends Controller
         return $this->creaNewToken($token);
     }
 
-    public function register(Request $request, RegisterAuthRequest $registerRequesr)
+    public function register(UserRegisterRequest $request)
     {
-        $validator = Validator::make($request->all(), [$registerRequesr]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors()->toJson(), 400);
-        }
         $user = new User($request->all());
         $user->id = Uuid::generate();
+        $user->sendEmailVerificationNotification();
         $user->save();
         return response()->json([
             'message' => 'User successfully registered',

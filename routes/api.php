@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VerificationApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,9 +32,10 @@ Route::group([
 
 Route::middleware('auth:user')->group(function () {
     Route::apiresource('posts', 'PostController');
-
 });
-Route::apiResource('searchs','BookController');
-Route::apiResource('users','UserController');
-Route::apiResource('users.roles','UserRoleController')->only('store');
+Route::apiResource('searchs', 'BookController');
+Route::apiResource('users', 'UserController');
+Route::apiResource('users.roles', 'UserRoleController')->only('store');
 
+Route::get('email/verify/{id}','VerificationApiController@verify')->name('verification.verify');
+Route::get('email/resend','VerificationApiController@resend')->name('verification.resend');

@@ -7,21 +7,26 @@ use App\Interfaces\AuthInterface;
 use App\Models\Book;
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\UserActivation;
+use App\Models\Verified;
 use App\Traits\HasUuid;
 use App\Traits\OverridesBuilder;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject, AuthInterface
+class User extends Authenticatable implements JWTSubject, AuthInterface,MustVerifyEmail
 {
     use Notifiable;
     use HasUuid;
     use HasRoles;
     use OverridesBuilder;
 
-    protected $guard = 'user';
+
+    protected $guard = 'admin';
+
     protected $table = 'users';
     /**
      * The attributes that are mass assignable.
@@ -92,7 +97,10 @@ class User extends Authenticatable implements JWTSubject, AuthInterface
     {
         return $this->hasMany(Contact::class);
     }
-
+    public function verifiedUser()
+    {
+        return $this->hasOne(Verified::class);
+    }
     public function isAdmin(): bool
     {
         return false;

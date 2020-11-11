@@ -6,15 +6,15 @@ use BenSampo\Enum\Enum;
 
 final class PermissionType extends Enum
 {
-    public const VIEW_ROLE = 'view-role';
-    public const CREATE_ROLE = 'create-role';
-    public const UPDATE_ROLE = 'update-role';
-    public const DELETE_ROLE = 'delete-role';
+    public const VIEW_BOOK = 'view-book';
+    public const CREATE_BOOK = 'create-book';
+    public const UPDATE_BOOK = 'update-book';
+    public const DELETE_BOOK = 'delete-book';
 
-    public const VIEW_ADMIN = 'view-admin';
-    public const CREATE_ADMIN = 'create-admin';
-    public const UPDATE_ADMIN = 'update-admin';
-    public const DELETE_ADMIN = 'delete-admin';
+    public const VIEW_POST = 'view-post';
+    public const CREATE_POST = 'create-post';
+    public const UPDATE_POST = 'update-post';
+    public const DELETE_POST = 'delete-post';
 
     public const VIEW_USER = 'view-user';
     public const CREATE_USER = 'create-user';

@@ -27,7 +27,7 @@ class BookController extends Controller
                     $q->select(['user_id','title']);
                 },
             ]);
-        return $user;
+        return $user->forPage(2,3);
 //    public function index(ModelFilters $modelFilters)
 //    {
 //        if (!empty($modelFilters->filters())) {
