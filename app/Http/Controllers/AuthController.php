@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\GuardType;
 use App\Http\Requests\LoginAuthRequest;
 use App\Http\Requests\UserRegisterRequest;
 use App\User;
+use Flugg\Responder\Exceptions\Http\PageNotFoundException;
 use Illuminate\Http\Request;
 use Webpatser\Uuid\Uuid;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +31,6 @@ class AuthController extends ApiController
         if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-
         return $this->creaNewToken($token);
     }
 
@@ -37,7 +38,7 @@ class AuthController extends ApiController
     {
         $user = new User($request->all());
         $user->id = Uuid::generate();
-        $user->sendEmailVerificationNotification();
+        //$user->sendEmailVerificationNotification();
         $user->save();
         return response()->json([
             'message' => 'User successfully registered',
@@ -68,5 +69,13 @@ class AuthController extends ApiController
             'token_type' => 'bearer',
             'user' => auth()->user()
         ]);
+    }
+
+    private function checkGuard(Request $request)
+    {
+        $this->guard = $request->route('guard');
+        if (!in_array($this->guard, GuardType::getValues())) {
+            throw new PageNotFoundException();
+        }
     }
 }

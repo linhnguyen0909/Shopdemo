@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PostCreated;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Post;
 use Flugg\Responder\Responder;
@@ -42,6 +43,7 @@ class PostController extends Controller
         } else {
             echo 'Not Authorized';
         }
+        event(new PostCreated($post) );
 
         exit;
     }
