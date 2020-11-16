@@ -30,7 +30,7 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->creaNewToken($token);
+        return $this->createNewToken($token);
     }
 
     public function register(Request $request, RegisterAuthRequest $registerRequesr)
@@ -57,7 +57,7 @@ class AuthController extends Controller
 
     public function refresh()
     {
-        return $this->creaNewToken(auth()->refresh());
+        return $this->createNewToken(auth()->refresh());
     }
 
     public function userProfile()
@@ -65,7 +65,7 @@ class AuthController extends Controller
         return response()->json(auth()->user());
     }
 
-    public function creaNewToken($token)
+    public function createNewToken($token)
     {
         return response()->json([
             'token' => $token,

@@ -36,4 +36,4 @@ Route::middleware('auth:user')->group(function () {
 Route::apiResource('searchs','BookController');
 Route::apiResource('users','UserController');
 Route::apiResource('users.roles','UserRoleController')->only('store');
-
+Route::get('/home', 'HomeController@index')->name('home');

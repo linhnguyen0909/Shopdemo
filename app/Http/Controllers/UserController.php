@@ -45,7 +45,6 @@ class UserController extends ApiController
         $request->validated();
         $user = new User();
         $user->fill($request->all());
-        dd($request->toArray());
         $user->save();
         return $responder->success($user->toArray());
     }

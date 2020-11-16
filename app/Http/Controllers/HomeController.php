@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        event(new SendMail('cfc36e29-ead9-39c1-9402-6c018f0c920a'));
+        return responder()->success();
     }
 }
