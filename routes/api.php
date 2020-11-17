@@ -41,6 +41,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('email-test', function(){
     $to_email='hoailinholaf@gmail.com';
     dispatch(new SendEmailJob($to_email));
-
-    dd('done');
+return 'Done';
 });

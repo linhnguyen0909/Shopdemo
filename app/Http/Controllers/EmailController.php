@@ -15,9 +15,14 @@ class EmailController extends Controller
 //        $to_email = $request->to_email;
 //        Mail::to($to_email)->send(new MyEmail(['contact' => $request->contact]));
 //        return 'success';
-        $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(3));
-        dispatch($emailJob);
 
-        echo 'email sent';
+//        $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(3));
+//        dispatch($emailJob);
+//
+//        echo 'email sent';
+        $time = $request->time * 60 * 60;
+        for ($i = 0; $i < $request->amount; $i++) {
+            dispatch(new MyEmail($request->all()))->delay(now()->addSeconds($time));
+        }
     }
 }
