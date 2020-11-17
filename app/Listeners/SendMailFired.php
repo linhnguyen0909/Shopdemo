@@ -18,7 +18,6 @@ class SendMailFired
      */
     public function __construct()
     {
-        //
     }
 
     /**
