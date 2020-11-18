@@ -16,7 +16,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "v7.29.2",
-        "laravel/tinker": "^2.0",
+        "laravel/tinker": "^2.5",
         "laravel/ui": "2.0",
         "laravelcollective/html": "^6.2",
         "mehdi-fathi/eloquent-filter": "1.6.9",

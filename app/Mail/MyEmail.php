@@ -28,10 +28,9 @@ class MyEmail extends Mailable
      */
     public function build()
     {
-
         return $this
             ->from('nguyenhoailinh9099@gmail.com')
-            ->subject('Linh Đẹp Trai ')->view('emails.success')
+            ->subject('Test Email ')->view('emails.success')
             ->with('data',$this->data);
     }
 }

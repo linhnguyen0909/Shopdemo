@@ -17,8 +17,7 @@ class UserController extends ApiController
     public function __construct()
     {
 //        $this->middleware('auth:user');
-
-//        $this->authorizeResource(User::class);
+        $this->authorizeResource(User::class);
     }
 
     /**
@@ -45,7 +44,6 @@ class UserController extends ApiController
         $request->validated();
         $user = new User();
         $user->fill($request->all());
-        dd($request->toArray());
         $user->save();
         return $responder->success($user->toArray());
     }

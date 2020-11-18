@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\SendEmailJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,9 @@ Route::middleware('auth:user')->group(function () {
 Route::apiResource('searchs','BookController');
 Route::apiResource('users','UserController');
 Route::apiResource('users.roles','UserRoleController')->only('store');
-
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('email-test', function(){
+    $to_email='hoailinholaf@gmail.com';
+    dispatch(new SendEmailJob($to_email));
+return 'Done';
+});
