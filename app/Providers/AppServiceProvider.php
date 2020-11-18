@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+//        $this->app->singleton(\Goutte\Client::class,function ($app){
+//            $client= new \Goutte\Client();
+//            $client->setClient(new \GuzzleHttp\Client([
+//                'timeout'=> 20,
+//                'allow_redirects'=>false,
+//            ]));
+//            return $client;
+//        });
     }
 
     /**
