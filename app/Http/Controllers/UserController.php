@@ -11,14 +11,16 @@ use App\Builders\Builder;
 use Flugg\Responder\Responder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Spatie\Permission\Traits\HasRoles;
 
 class UserController extends ApiController
 {
+    use HasRoles;
     public function __construct()
     {
 //        $this->middleware('auth:user');
 
-//        $this->authorizeResource(User::class);
+        $this->authorizeResource(User::class);
     }
 
     /**

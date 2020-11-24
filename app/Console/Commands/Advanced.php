@@ -3,26 +3,22 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Console\GeneratorCommand;
-use PHPUnit\Util\Filesystem;
 
-class CreateAction extends Command
+class Advanced extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:action { name: Actions name you want to use.}';
+    protected $signature = 'blog:post';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Action';
-
-    protected $type = 'Action';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -41,16 +37,17 @@ class CreateAction extends Command
      */
     public function handle()
     {
-        return $this->getStub();
-    }
 
-    public function getStub()
-    {
-        return app_path('Actions');
-    }
+        $this->output->progressStart(10);
 
-    protected function getDefaultNamespace($rootNamespace)
-    {
-        return $rootNamespace.'\Actions';
+        for ($i = 0; $i < 10; $i++) {
+            sleep(1);
+
+            $this->output->progressAdvance();
+        }
+
+        $this->output->progressFinish();
+        $name = $this->ask('What is your name?');
+        $this->info("Hello,$name Great");
     }
 }
